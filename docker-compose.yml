@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  preso-slides:
+    image: rupakg/preso-slides
+    # build: ../preso-slides
+  
+  preso-frontend:
+    image: nginx
+    ports:
+      - 8080:8080
+    volumes:
+      - "./preso-auth/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./preso-auth/.htpasswd:/etc/nginx/.htpasswd:ro"
+    links:
+      - preso-slides:backend_service
+    depends_on:
+      - preso-slides
+    restart: always
+  
