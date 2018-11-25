@@ -33,12 +33,12 @@ services:
   source:
     image: containerize/git
     environment: 
-      - REPO_LOCAL=/data/git/repos/rupakg/preso-app
+      - REPO_LOCAL=/data/git/repos/preso-app
       - REPO_BRANCH=master
       - REPO_REMOTE=https://github.com/rupakg/preso-app.git
     tty: true
     volumes: 
-      - preso-frontend_auth_data:/data/git/repos/rupakg/preso-app/preso-auth
+      - preso-frontend_auth_data:/data/git/repos/preso-app/preso-auth
 
 volumes:
   preso-frontend_auth_data: {}
