@@ -10,9 +10,9 @@ services:
     deploy:
       mode: replicated
       replicas: 3
-      # placement:
-      #   constraints:
-      #     - node.role == worker
+      placement:
+        constraints:
+          - node.role == worker
               
   preso-frontend:
     image: nginx
