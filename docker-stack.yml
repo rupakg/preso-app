@@ -6,7 +6,7 @@ services:
     ports:
       - 3999:3999
     environment:
-      EXTERNAL_HOST: localhost    
+      EXTERNAL_HOST: localhost       
     deploy:
       mode: replicated
       replicas: 3
