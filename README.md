@@ -65,4 +65,3 @@ $ docker-compose up -d --scale preso-slides=3
 $ cd preso-app
 $ docker-compose kill 
 ```
-
