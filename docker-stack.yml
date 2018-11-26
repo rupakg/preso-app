@@ -5,8 +5,8 @@ services:
     image: rupakg/preso-slides
     ports:
       - 3999:3999
-    environment:
-      EXTERNAL_HOST: localhost       
+    # environment:
+    #   EXTERNAL_HOST: localhost       
     deploy:
       mode: replicated
       replicas: 3
