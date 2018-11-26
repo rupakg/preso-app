@@ -4,10 +4,10 @@ services:
   preso-slides:
     image: rupakg/preso-slides
     # build: ../preso-slides
-    logging:
-      driver: syslog
-      options:
-        syslog-address: $SYSLOG_ADDRESS
+    # logging:
+    #   driver: syslog
+    #   options:
+    #     syslog-address: $SYSLOG_ADDRESS
   
   preso-frontend:
     image: nginx
@@ -21,8 +21,8 @@ services:
     depends_on:
       - preso-slides
     restart: always
-    logging:
-      driver: syslog
-      options:
-        syslog-address: $SYSLOG_ADDRESS
+    # logging:
+    #   driver: syslog
+    #   options:
+    #     syslog-address: $SYSLOG_ADDRESS
   
