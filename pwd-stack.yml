@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  preso-slides:
+    image: rupakg/preso-slides
+    ports:
+      - 3999:3999    
+              
+  preso-frontend:
+    image: nginx
+    ports:
+      - 8080:8080
+    volumes:
+      - preso-frontend_auth_data:/etc/nginx
+    links:
+      - preso-slides:backend_service
+    depends_on:
+      - preso-slides
+    restart: always
+
+  source:
+    image: containerize/git
+    environment: 
+      - REPO_LOCAL=/data/git/repos/preso-app
+      - REPO_BRANCH=master
+      - REPO_REMOTE=https://github.com/rupakg/preso-app.git
+    tty: true
+    volumes: 
+      - preso-frontend_auth_data:/data/git/repos/preso-app/preso-auth
+
+volumes:
+  preso-frontend_auth_data: {}

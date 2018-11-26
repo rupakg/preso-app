@@ -70,4 +70,4 @@ $ docker-compose kill
 
 To quickly deploy the stack using Play with Docker (PWD), click the **Try in PWD** button below.
 
-[![Try in PWD](https://github.com/play-with-docker/stacks/raw/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/rupakg/preso-app/master/docker-stack.yml)
+[![Try in PWD](https://github.com/play-with-docker/stacks/raw/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/rupakg/preso-app/pwd-version/pwd-stack.yml)
