@@ -23,7 +23,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.role == manager
+          - node.hostname == manager1
 
   source:
     image: containerize/git
@@ -34,6 +34,10 @@ services:
     tty: true
     volumes: 
       - preso-frontend_auth_data:/data/git/repos/preso-app/preso-auth
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == manager1      
 
 volumes:
   preso-frontend_auth_data: {}
