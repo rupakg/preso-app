@@ -5,6 +5,8 @@ services:
     image: rupakg/preso-slides
     ports:
       - 3999:3999    
+    environment:
+      EXTERNAL_HOST: localhost      
     deploy:
       mode: replicated
       replicas: 3
@@ -15,7 +17,7 @@ services:
   preso-frontend:
     image: nginx
     ports:
-      - 8080:8080
+      - 8080:8080   
     volumes:
       - preso-frontend_auth_data:/etc/nginx
     depends_on:
