@@ -17,7 +17,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - preso-frontend_auth_data:/etc/nginx/conf.d
+      - preso-frontend_auth_data:/etc/nginx
     depends_on:
       - preso-slides
     deploy:
